@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.6);
+}
+.wrap {
+    width: 100%;
+    height: 100vh;
+    background: url(../bg.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.panel{
+    /* width: calc(100% - 40px);
+    height: calc(100vh - 40px); */
+    width: 100%;
+    height: 100vh;
+    /* border-radius: 20px; */
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login{
+    /* width: 300px; */
+    height: 500px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: 1s;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    flex-flow: column;
+}
+.login h4{
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.7) ;
+    margin-bottom: 10px;
+}
+.login input{
+    width: calc(100% - 50px);
+    height: 34px;
+    padding-left: 8px;
+    background:rgba(0, 0, 0, 0.2);
+    outline-style: none;
+    border: 0px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: large;
+    border-radius: 6px;
+    margin-top: 12px;
+    
+}
+.login input::placeholder{
+    font-size: 15px;
+}
+
+.login button{
+    width: 80px;
+    height: 34px;
+    margin-top: 16px;
+    background:rgba(0, 0, 0, 0.5);
+    border: 0px;
+    border-radius: 6px;
+}
+
+.login button:hover{
+    background:rgba(0, 0, 0, 0.65);
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login button:active{
+    background:rgba(0, 0, 0, 0.8);
+    transform: translateY(2px);
+}
+
+.trans{
+    width: 340px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.trans h4{
+    font-size: 22px;
+}
+.trans p{
+    font-size: 16px;
+    margin-top: 18px;
+}
+.trans button{
+    width: 80px;
+    height: 34px;
+    margin-top: 16px;
+    background:rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+.trans button:hover{
+    background:rgba(0, 0, 0, 0.65);
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.trans button:active{
+    transform: translateY(2px);
+}
+.register{
+    /* width: 0px; */
+    height: 500px;
+    /* opacity: 1; */
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+}

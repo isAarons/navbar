@@ -1,72 +1,74 @@
 <script setup lang="ts">
 // import TheWelcome from '../components/TheWelcome.vue'
-import { ref } from 'vue';
-import { reactive } from 'vue';
+import { ref } from "vue";
+import { reactive } from "vue";
 let navstyle = reactive({
-  width: '110px',
-  transition: '1s',
-})
+  width: "110px",
+  transition: "1s",
+});
 let linestyle = reactive({
-  width: '60px',
-  transition: '1s',
-})
+  width: "60px",
+  transition: "1s",
+});
 let constyle = reactive({
   width: "0px",
   opacity: 0,
-  left: "-20px"
-})
+  left: "-20px",
+});
 let switchstyle = reactive({
-  transform: 'rotate(180deg)'
-})
+  transform: "rotate(180deg)",
+});
 let riconstyle = reactive({
   width: "0px",
   opacity: 0,
-})
-let username = ref('魏建奇111111');
+});
+let username = ref("魏建奇111111");
 let iconconstyle = reactive({
   opacity: 0,
-})
+  width: "0px",
+});
 
 function openControl() {
-  console.log(navstyle.width)
-  if (navstyle.width == '110px') {
-    navstyle.width = '280px'
-    linestyle.width = '230px'
-    switchstyle.transform = 'rotate(0deg)'
-    iconconstyle.opacity = 1
+  console.log(navstyle.width);
+  if (navstyle.width == "110px") {
+    navstyle.width = "280px";
+    linestyle.width = "230px";
+    switchstyle.transform = "rotate(0deg)";
+    iconconstyle.opacity = 1;
+    iconconstyle.width = "130px";
     constyle = {
-      width: '160px',
+      width: "160px",
       opacity: 1,
-      left: "0px"
-    }
+      left: "0px",
+    };
     riconstyle = {
-      width: '60px',
+      width: "60px",
       opacity: 1,
-    }
+    };
   } else {
-    navstyle.width = '110px'
-    linestyle.width = '60px'
-    switchstyle.transform = 'rotate(180deg)'
-    iconconstyle.opacity = 0
+    navstyle.width = "110px";
+    linestyle.width = "60px";
+    switchstyle.transform = "rotate(180deg)";
+    iconconstyle.opacity = 0;
+    iconconstyle.width = "0px";
     constyle = {
-      width: '0px',
+      width: "0px",
       opacity: 0,
-      left: "-20px"
-    }
+      left: "-20px",
+    };
     riconstyle = {
-      width: '0px',
+      width: "0px",
       opacity: 0,
-    }
+    };
   }
 }
 </script>
 
 <template>
   <div class="wrap">
-
     <div class="nav" :style="navstyle">
       <div class="switch" :style="switchstyle" @click="openControl()">
-        <span class="iconfont  icon-cc-pointer-left"></span>
+        <span class="iconfont icon-cc-pointer-left"></span>
       </div>
       <div class="btn">
         <div class="btn-item"></div>
@@ -75,13 +77,12 @@ function openControl() {
       </div>
       <div class="icon">
         <div class="icon-img">
-          <img src="../assets/headimg.png" alt="111">
+          <img src="../assets/headimg.png" alt="111" />
         </div>
         <div class="icon-con" :style="iconconstyle">
           <p>Good Day</p>
           <h2>{{ username }}</h2>
         </div>
-
       </div>
       <div class="line" :style="linestyle"></div>
       <div class="title">
@@ -93,7 +94,9 @@ function openControl() {
           <div class="light"></div>
           <div class="licon"><span class="iconfont icon-wenjian"></span></div>
           <div class="con" :style="constyle">Dashboard</div>
-          <div class="ricon" :style="riconstyle"><span class="iconfont icon-shezhi"></span></div>
+          <div class="ricon" :style="riconstyle">
+            <span class="iconfont icon-shezhi"></span>
+          </div>
         </div>
         <div class="item">
           <div class="light"></div>
@@ -111,7 +114,9 @@ function openControl() {
           <div class="light"></div>
           <div class="licon"><span class="iconfont icon-xiaolian"></span></div>
           <div class="con" :style="constyle">Sales</div>
-          <div class="ricon" :style="riconstyle"><span class="iconfont icon-caidan1"></span></div>
+          <div class="ricon" :style="riconstyle">
+            <span class="iconfont icon-caidan1"></span>
+          </div>
         </div>
         <div class="item">
           <div class="light"></div>
@@ -135,7 +140,9 @@ function openControl() {
           <div class="light"></div>
           <div class="licon"><span class="iconfont icon-caidan"></span></div>
           <div class="con" :style="constyle">Software</div>
-          <div class="ricon" :style="riconstyle"><span class="iconfont icon-Dashboard"></span></div>
+          <div class="ricon" :style="riconstyle">
+            <span class="iconfont icon-Dashboard"></span>
+          </div>
         </div>
         <div class="item">
           <div class="light"></div>
@@ -147,7 +154,9 @@ function openControl() {
           <div class="light"></div>
           <div class="licon"><span class="iconfont icon-sousuo"></span></div>
           <div class="con" :style="constyle">Intercom</div>
-          <div class="ricon" :style="riconstyle"><span class="iconfont icon-caidan1"></span></div>
+          <div class="ricon" :style="riconstyle">
+            <span class="iconfont icon-caidan1"></span>
+          </div>
         </div>
         <div class="item">
           <div class="light"></div>
@@ -157,8 +166,10 @@ function openControl() {
         </div>
       </div>
     </div>
-    <!-- <button @click='openControl' style="color: red;">12313213213</button> -->
-
+    <div class="workspace">
+      <h1>workspace</h1>
+      <RouterView />
+    </div>
   </div>
 </template>
 <style scoped>
@@ -170,7 +181,15 @@ function openControl() {
 .licon .iconfont {
   font-size: 26px;
 }
-
+.workspace {
+  height: calc(100vh - 40px);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  margin-left: 48px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 20px;
+}
 /* .switch {
   display: flex;
   align-items: center;

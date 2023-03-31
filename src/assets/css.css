@@ -19,7 +19,9 @@
     width: 110px;
     /* margin-right: 180px; */
     padding-bottom: 20px;
-    height: 820px;
+    height: calc(100vh - 40px);
+    margin-top: 20px;
+    margin-bottom: 20px;
     background: rgba(0, 0, 0, 0.8);
     /* border-radius: 20px; */
     border-top-right-radius: 20px;
@@ -105,10 +107,11 @@
 }
 
 .icon-con {
-    width: auto;
+    width: 130px;
+    overflow: hidden;
     margin-left: 25px;
-    transition: 0.8s;
-    transform-origin: right;
+    transition: 1s;
+   
 }
 
 .icon-con p {
